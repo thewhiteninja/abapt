@@ -1781,10 +1781,10 @@ class PE(object):
                 self.fileno = fd.fileno()
                 if hasattr(mmap, 'MAP_PRIVATE'):
                     # Unix
-                    self.__data__ = mmap.mmap(self.fileno, 0, mmap.MAP_PRIVATE)
+                    self.__data__ = bytearray(mmap.mmap(self.fileno, 0, mmap.MAP_PRIVATE))
                 else:
                     # Windows
-                    self.__data__ = mmap.mmap(self.fileno, 0, access=mmap.ACCESS_READ)
+                    self.__data__ = bytearray(mmap.mmap(self.fileno, 0, access=mmap.ACCESS_READ))
                 self.__from_file = True
             except IOError as excp:
                 exception_msg = '{0}'.format(excp)
@@ -1795,7 +1795,7 @@ class PE(object):
                 if fd is not None:
                     fd.close()
         elif data is not None:
-            self.__data__ = data
+            self.__data__ = bytearray(data)
             self.__from_file = False
 
         if not fast_load:
@@ -4087,14 +4087,7 @@ class PE(object):
         that the relocation information is applied permanently.
         """
 
-        # Rebase if requested
-        #
-        if ImageBase is not None:
-            # Keep a copy of the image's data before modifying it by rebasing it
-            #
-            original_data = self.__data__
-
-            self.relocate_image(ImageBase)
+        self.relocate_image(ImageBase)
 
         # Collect all sections in one code block
         mapped_data = self.__data__[:]
@@ -4127,11 +4120,6 @@ class PE(object):
                 mapped_data = mapped_data[:padding_length]
 
             mapped_data += section.get_data()
-
-        # If the image was rebased, restore it to its original form
-        #
-        if ImageBase is not None:
-            self.__data__ = original_data
 
         return mapped_data
 
@@ -5102,7 +5090,8 @@ class PE(object):
             raise TypeError('data should be of type: bytes')
 
         if offset >= 0 and offset < len(self.__data__):
-            self.__data__ = (self.__data__[:offset] + data + self.__data__[offset + len(data):])
+            for i in range(len(data)):
+                self.__data__[offset + i] = data[i]
         else:
             return False
 

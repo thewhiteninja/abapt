@@ -199,7 +199,7 @@ class Project:
     def disass_all(self):
         if self.pe is not None:
             try:
-                self._disassembler_persistent = RecursiveDisassembler(self.pe)
+                self._disassembler_persistent = RecursiveDisassembler(self)
             except Exception as e:
                 raise e
 

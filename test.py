@@ -1,6 +1,5 @@
 import baf
 from modules.breakpoints import *
-from modules.cfg import *
 from modules.logger import *
 from modules.utils import *
 
@@ -23,14 +22,14 @@ def test():
     global b
     welcome()
     set_log_level(LogLevel.DEBUG)
-    b = baf.Project('data\\explorer.exe')
+    b = baf.Project('data\\edgehtml.dll')
     # print(b.file_info)
     # dp = b.debug()
     # dp.on_debug_start = install_bp
     # dp
     # dp.run("suce")
     # print(b.pe.helper.tls_callbacks)
-    print(b.pe.helper.imports)
+    # print(b.pe.helper.imports)
     # b.disass()
     # b.disass(begin=0x4023d0)
     # proc = b.run()
@@ -51,14 +50,14 @@ def test():
     # exit_code = proc.wait()
     # print("Exit code: %d (%s)" % (exit_code, format_error(exit_code)))
     b.disass_all()
-    for p in b.blocks.addresses:
-        print(hex(p) + " -> " + hex(p + b.blocks[p].size))
+    # for p in b.blocks.addresses:
+    #    print(hex(p) + " -> " + hex(p + b.blocks[p].size))
     # print(b.functions)
     # for func in b.functions.addresses:
-    #    print(func)
-    # b.functions[0x1401385d3].cfg.to_dot("pouet.dot")
-    cfg = CFG(b.blocks[0x1401385d3])
-    cfg.to_dot()
+    #   print(func)
+    b.functions[0x1401385e0].cfg.to_dot("pouet.dot")
+    # cfg = CFG(b.blocks[0x1401385e0])
+    # cfg.to_dot()
     # print(b.pe.helper.timestamp)
     # for i in b.pe.sections:
     # print(hexlify(b.pe.helper.mapped[b.pe.helper.image_base + i.VirtualAddress:b.pe.helper.image_base + i.VirtualAddress + 16]))

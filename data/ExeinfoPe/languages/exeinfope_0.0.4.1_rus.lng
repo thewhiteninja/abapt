@@ -1,0 +1,316 @@
+
+; Языковый файл для Exeinfo Pe 0.0.4.1 by A.S.L
+; Если Exeinfo обнаружит этот файл, то он будет использован по умолчанию.
+; ( ; ) = комментарий - Exeinfo игнорирует его , пустые строки пропускаются , " " - пробел не допускается
+; ( _name ) = внутренние команды для exeinfo
+; ( . ) - заголовок TForm
+; Информация : Вы можете добавить для перевода любой элемент ресурса (разрешены только элементы с именем  ".caption" )
+; ( & )  - Горячие клавиши например : &About = "A" клавиша , e&xit = "X" клавиша
+; поддерживаемые _Charset: 
+; ANSI , Arabic , Baltic , chineseBig5 , EastEurope , GB2312 , Greek , Hangeul , MAC , Russian , Turkish
+_Version=1.25
+_Charset = Russian
+_Comment = Языковый файл
+
+; Main Form1 ----------------------------------------------------------------------
+
+_Главное окно
+EP=Точка входа:
+Foffset=Оффсет:
+Linker_i=Версия:
+FSize=Размер:
+EP_sec=EP Секция:
+FirstB=Нач. байты:
+SubSys=Подсистема:
+Overlay=Оверлей:
+Diag_=Диагностика
+Lame_info=Информация для распаковки:
+
+; Hex 2 Dec калькулятор
+kalk=Введите значение Hex для преобразования в Dec
+kalk_decHex=Введите значение Dec для преобразования в Hex
+
+; Основные Кнопки
+But_File=Файл:
+Plugi=Плагин
+O_prog=О программе
+opcje_but=Опции
+wyjscie=Выход
+RipButton=RiP
+
+; Пункты меню
+_Rip Меню
+exe=Распаковать исполняемый файл PE
+ScanonlyEXEpe= Только сканировать (без распаковки)
+MSI_RIP=MSI общий ( msi / doc / xls / pps / adp / wps )
+
+; GFX картинки    -   Подменю:
+GFXRip_Menu=Извлечь Графику
+PNG_rip=Извлечь png
+JPG_rip=Извлечь jpg JFIF только + 32 CMYK
+BMP_rip=Извлечь Bitmap BMP
+GIF_rip=Извлечь GIF
+AllGFX1=Извлечь всю графику
+
+; BIN архивы    -   Подменю:
+Arch_Rip_menu=Извлечь архивы:
+Rip_zip=Извлечь Zip архив
+Rip_Rararch=Извлечь RAR архив
+Rip_7ziparch=Извлечь 7zip + Xor FF архивы
+cab=Извлечь MS CAB архив
+Rip_Bzip2arch=Извлечь BZip2 архив
+Rip_gzipArch=Извлечь GZip архив
+Allinone1=Извлечь все архивы
+www_rip=Адрес сайта: www / http / ftp:// - Извлечь и показать 
+Rip_SWFflash=Ивлечь флеш
+Rip_hiddenicon=Извлечь иконки
+Rip_xml=Извлечь xml
+uniRip=Универсальный распаковщик
+Im_hungry_forRip=Агресивная распаковка ( Всё в одном )
+
+;Меню инструменты
+ExternalRun=Использовать стороннии программы
+OverlayMenu=Операции с оверлеями .exe
+
+; подменю
+SaveOverlayifexist=Сохранить оверлей как .ovl (если есть)
+Trunk_overlay=Вырезать оверлей (сгенерировать новый файл)
+Addemptyoverlaydata=Добавить пустой оверлей(сгенерировать новый файл)
+Add_overlay_from_file=Добавить оверлей из файла(сгенерировать новый файл)
+OverlayuncrypterXOR=Оверлей декриптор XOR (если есть)
+OEPCorrectormenu=Исправить OEP
+
+; подменю OEP
+EPcorrector1=EP корректор (Delphi/C++6) создание нескольких файлов
+EPcorrector_Del_runtime=EP корректор для Delphi v.5.0 - во время выполнения
+EPcorr_DevC=EP корректор для Dev C++/MINGW 32/GCC 32 Компилятор
+
+;
+XoR_permutator=Генерировать xor-ed данные
+sec_stripper=Сохранить секции в файлы
+rejestry=Вызов сканера регистра
+SearchCompilerRuntime=Поиск компилятора во время выполнения
+
+eXtraTools=Дополнительные инструменты
+
+; Подменю
+ATunprotector=AT4RE v1.0 protector - Инструменты распаковки
+sign_count=Счетчик сигнатур для (userdb.txt )
+VBfakeUPX=Добавить поддельные знаки Visual Basic для UPX пакера
+ep_1000=Установить EP до 1000 совпадений с PEcompact ,Asprotect и повторить сканирование
+Flashscrambler=Анти Flashback шифратор - включая EP  для UPX - и повторить сканирование
+SavemodifiedBuffertofile=Сохранить измененный буфер в файл
+
+; Файл
+Rename_file=Переименовать файл
+CopyAs=Сохранить как .bak
+Executecreateprocess=Выполнить, создать процесс
+ExecuteRun=Выполнить запуск
+Deletefile1=Удалить файл  Alt+Del
+FileProp=Свойства файла
+Killexe=Завершить исполняемый процесс из MEM
+multiskaner=Мультисканирование  F2
+Other_detect=Другие детекторы/Меню распаковщиков - ПКМ
+Viewlogfile1=Полный отчет (Exeinfo.log):
+
+;Подменю
+Viewgloballogfile=Показать Exeinfo.log
+Deletelogfile=Удалить Exeinfo.log
+
+;
+snapshot=Создать и сохранить скриншот главного окна в JPG/PNG  файл
+calculator1=Калькулятор
+hex2dec=Конвертерировать Hex в Dec и обратно Dec в Hex
+Detect_installedNETver=Найти установленные версии .NET Framework
+
+;Дизассемблер
+disassemblefileview=Просмотр в дизассемблированном виде:
+dASMRVA=d-Asm RVA
+dAsmVA=d-Asm VA ( 40xxxx )
+dAsm_fileoffset=d-Asm Смещение в файле
+Searchmenu=Поиск:
+binaryHEX=Бинарные значения
+string816bit=Строки 8/16 bit ( ascii/unicode )
+ViewHEXfileOffset=Показать HEX/Ascii смещение в файле
+
+; --------------------------------------------------------------------------------------------
+_К о н ф и г у р а ц и я
+.=Опции
+CB_Fscan=Быстрый поиск
+CBox_errors=Пропускать ошибки
+Label_skin=Обложка
+CheckBoxTOP=Всегда сверху
+shell_integration=Интегрировать в проводник
+closeEI_whenExtRun=Закрыть ExeInfo после сканирования.
+Label2logFile=Сохранить отчет:
+Gui_Big=Большая форма
+Label3lang=Язык:
+
+; INFO : Я скопировал значение "Окей" О форме в кнопку "OK"
+okej=OK
+
+; *** если найден exeinfope.lng файл, то показать информацию о нем
+Ext_lang_file=Загрузить свой файл .lng
+
+; --------------------------------------------------------------
+_Мультисканирование
+multifile_scan=Начать сканирование
+wait_czekaj=- > Пожалуйста, подождите < -
+bn_close=Закрыть
+Scan_dir=Провереные папки
+change_charset=Кодировка
+
+; Меню мультисканирования ПКМ
+copy_current_l2clip=Копировать текущую строку в буфер обмена
+copyresulttoClip=Копировать результат в буфер обмена
+savetolocalLOGfile=Сохранить результат в локальном лог файле
+F_unknownExe=Фильтр-показать только- Неизвестный файл
+F_hide64bitPEfiles=Фильтр-скрыть 64 битные PE файлы
+Hideselectedline=Скрыть выбранные линии
+Hideidenticaldiagnoselines=Скрыть идентичные линии
+setFonttoBold=Переключение шрифтов-[Жирный/Нормальный]
+Adv_scan_dll=>>>Запуск advanced_scan.dll<<<
+load_to_exein=Загрузить в ExeInfo PE
+EXITtoWindows=Выход в Windows
+
+; ------------------------------------------------------------------
+_Секций
+.=Секции:
+GroupBox1=Информация о секциях:
+Check_exec=Exe файлы
+Check_R=Чтение
+Check_W=Запись
+SekcjaSize=Размер секции:
+;Кнопки
+copyTClip=Копир.
+SecsStat=Статус
+CloseTXT2=Закрыть
+;Меню
+viewH=Показать (Hex/Ascii) 
+viewASM=Показать (ASM код)
+shortjmpcount=short JMP счетчик (EB 01 - EB 05)
+countNOPinstr=Кол-во NOP, инструкций (90 90. . .)
+stat00section=Тест 00h значений секции (%)
+view_search_menu=>> Просмотр/Поиск  MENU 
+Savesectiontodisk=Сохранить секцию на диске
+
+; ------------------------------------------------------------------
+_Обзор
+.=Окно
+
+; кнопки
+cClip=Копировать
+CloseTXT=Закрыть
+
+; ------------------------------------------------------------------
+; Exe Header Info GUI
+_HeadInfo
+.=Информация заголовка:
+FromHeaderVo=Из заголовка:    Частота:
+klip=Копировать
+CloseW=Закрыть
+DirectoryInfo=Информация:
+Export=Экспорт:
+Import=Импорт:
+Resource=Ресурсы:
+;
+;
+;
+;
+; -------------------------------------------------------------------
+_Statistic
+back_to_exei=Закрыть
+sections_but=Секции
+
+
+; ******************* И З М Е Н Е Н И Я ********************************
+; ******************* added at version 0.0.3.4 *************************
+; Exe - DLL characteristic GUI
+_FileCharFlag
+.=Свойства файла
+character=Характеристики: 
+GpBox_DLL=***DLL Flag
+GBox1=Hi
+GBox2=Lo
+_NET_GUI
+.=.NET Directory
+NET_PE_Header_COM=PE Header - COM Descriptor Area
+NET_Meta_Data_Head=Meta Data Header
+NET_Streams=Meta Data Streams
+RipNET=Rip .Net Resources
+; ----  RMButton menu   -----
+ItemHexView=Item Hex View
+CopyLineClip=Копировать строку
+CopyAlllinestoclip=Копировать все строки
+_Delphi_Form
+.=DFM Показать как текст
+FormView=Форма просмотра
+saveTXT=Сохранить как текст
+_Main
+;  BIN archives    -   RIP Submenu :
+Rip_Lzma=Извлечь Lzma архив ( 5D 00 ...)
+Rip_Zlib=Извлечь Zlib архив ( 78 xx ...)
+;Tools Menu items
+Zlib_unpacker=( DATA ) - Zlib unpacker v.1.2.x - www.base2ti.com
+DForm_View=DFM - Delphi Form Scanner (ввиде текста)
+;.NET Tools / Detectors - RMButton menu
+NETToolMenu=.NET Инструменты/Детекторы
+RedGateObfChk=*RedGate.ObfuscationChecker - Trial Free only *
+; ******************* Added at version 0.0.3.5 *************************
+; File Menu Items - Main Form
+Copy_part_of_file=Копировать часть файла с : 0000 до : ????
+; Sections GUI
+_Sections
+cave_finder=Cave
+; Disassemble GUI
+_Dasm_GUI
+.=*Disassemble Window caption*
+Code_colorizer=Code_colorizer
+UpCase_code=UpCase_code
+;RichMenu
+dASMRVA=D-Asm RVA
+dAsmVA=D-Asm VA ( 40xxxx )
+dAsm_fileoffset=D-Asm File Offset
+Searchtext=Поиск 
+CopySelectedToClip=Копировать выделенное
+CopyAllToClip=Копировать всё
+CleanClipboard=Очистить буфер
+disassemblefileview=дизассемблировать файл
+View_as_Hex=Только Hex просмотр
+MarklinetoRedBOX=Включить/Выключить текст + помеченный как Red BOX
+; AdrConvert GUI
+_AdrConvert
+.=Адрес Конвертора
+Label_VA=VA :
+Label_RVA=RVA :
+Label_offset=Смещение файла:
+; ******************* Added at version 0.0.3.5  Beta 765 **************
+_Main
+; File Menu Items
+Runscript=Запустить скрипт
+; ******************* Added at version 0.0.3.7 *************************
+_Main
+; File Menu Items
+ext_check_via_www=Проверить расширение файла на : www.fileinfo...
+;.NET Tools / Detectors - RMButton menu
+ImproveNETDeobf=Improve .NET - Deobfuscator v1.0.9 -  2013.12.28
+; ******************* Added at version 0.0.3.8 *************************
+_NET_GUI
+Save_MDstreams=Сохранить все M.D.потоки
+; ******************* Added at version 0.0.3.9 *************************
+_Main
+; File Menu Items
+virustotal=Отправить на: virustotal.com
+; ******************* Added at version 0.0.4.0 *************************
+_Sections
+SekcjaSizeAll=Размер всех секций :
+; ******************* removed at version 0.0.4.1 *************************
+; item removed !!!
+;calculator1= Run &Calculator
+; Main form Buttons
+;O_prog=AbOuT
+;opcje_but=OPtion
+;wyjscie=Exit !
+; =================================================
+; End of .lng file 
+; =================================================

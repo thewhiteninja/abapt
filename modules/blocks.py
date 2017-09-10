@@ -32,7 +32,7 @@ class Block(object):
         for instr in self.__instructions:
             if len(code) >= instr.size:
                 if code.startswith(instr.bytes):
-                    code = code[len(instr):]
+                    code = code[instr.size:]
                 else:
                     return False
             else:
@@ -64,6 +64,13 @@ class Block(object):
         self.__instructions.append(instr)
         self.__size += instr.size
 
+    def add_all(self, instrs):
+        self.__instructions.extend(instrs)
+        i_size = 0
+        for instr in instrs:
+            i_size += instr.size
+        self.__size = i_size
+
     def link_to(self, block):
         if block is None:
             return
@@ -85,6 +92,27 @@ class Block(object):
             return self.__instructions[-1].address + self.__instructions[-1].size
         else:
             return None
+
+    def split_at(self, address):
+        i = 0
+        newsize = 0
+        for instr in self.__instructions:
+            if instr.address == address:
+                break
+            else:
+                i += 1
+                newsize += instr.size
+
+        new_block = Block()
+        new_block.add_all(self.__instructions[i:])
+        self.__instructions = self.__instructions[:i]
+        self.__size = newsize
+
+        new_block.parents.append(self)
+        new_block.children = self.children
+        self.__children = [new_block]
+
+        return new_block
 
     def cut_at(self, address):
         i = 0

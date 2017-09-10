@@ -2,6 +2,7 @@ import glob
 import hashlib
 import math
 import os
+import pathlib
 import platform
 import sys
 import time
@@ -122,6 +123,15 @@ def is_executable(exe):
         return False
     return True
 
+
+def file_exists(filename):
+    f = pathlib.Path(filename)
+    return f.is_file()
+
+
+def dir_exists(filename):
+    f = pathlib.Path(filename)
+    return f.is_dir()
 
 def get_binary_type(path):
     binary_type = c_ulong(0)

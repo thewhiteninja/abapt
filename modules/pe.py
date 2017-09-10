@@ -14,7 +14,7 @@ class PEFormatError(Exception):
 class MappedPE(object):
     def __init__(self, pe):
         self._base = pe.OPTIONAL_HEADER.ImageBase
-        self._mapped_data = pe.get_memory_mapped_image(ImageBase=self._base)
+        self._mapped_data = memoryview(pe.get_memory_mapped_image(ImageBase=self._base))
         self._vitual_size_max = 0x7fffffff if pe.OPTIONAL_HEADER.Magic == 0x10b else 0x7ffffffffff
 
     def __getitem__(self, item):
@@ -41,7 +41,7 @@ class MappedPE(object):
 
             return self._mapped_data[slice(start - self._base if start is not None else None,
                                            stop - self._base if stop is not None else None,
-                                           step)] + b'\0' * left
+                                           step)]
         else:
             raise TypeError('Index must be int, not {}'.format(type(item).__name__))
 

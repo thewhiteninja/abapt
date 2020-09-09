@@ -100,10 +100,10 @@ Gratz man :)
     <td colspan="2">Test CFG generation for chall.exe@0x40172c</td>
   </tr>
   <tr>
-    <td  colspan="2" valign="center">IDA
+    <td  colspan="2" valign="center"><center>IDA</center><br>
     <img src="imgs/0x40172c_ida.png" />
     </td>
-    <td colspan="2" valign="center">Tool
+    <td colspan="2" valign="center"><center>Tool</center><br>
     <img height="751" src="imgs/0x40172c.svg" />
     </td>
   </tr>
